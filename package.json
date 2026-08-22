@@ -1,0 +1,23 @@
+{
+  "name": "yajsc-playwright",
+  "version": "1.0.0",
+  "description": "initial",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MilaTesanchuk/yajsc-playwright.git"
+  },
+  "keywords": [],
+  "author": "me",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/MilaTesanchuk/yajsc-playwright/issues"
+  },
+  "homepage": "https://github.com/MilaTesanchuk/yajsc-playwright#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.62.1",
+    "@types/node": "^26.2.0"
+  }
+}
