@@ -1,8 +1,14 @@
-
-# Playwright
+# Node
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
+
+# Playwright test artifacts
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+playwright/.auth/
+
+# Optional: videos & traces if you store them separately
+*.mp4
+*.webm
+*.zip
