@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "initial",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "lint": "npx eslint ."
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MilaTesanchuk/yajsc-playwright.git"
@@ -17,7 +19,12 @@
   },
   "homepage": "https://github.com/MilaTesanchuk/yajsc-playwright#readme",
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
+    "@types/node": "^26.2.0",
+    "eslint": "^10.9.1",
+    "eslint-plugin-playwright": "^2.11.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.68.0"
   }
 }
