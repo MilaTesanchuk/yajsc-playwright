@@ -13,5 +13,4 @@ export class ProductPage {
         this.addToCartBtn = this.page.getByTestId('add-to-cart');
         this.addToFavBtn = this.page.getByTestId('add-to-favorites');
     }
-
 }
