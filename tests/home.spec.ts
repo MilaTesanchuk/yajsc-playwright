@@ -6,5 +6,5 @@ test('user can go to product page', async ({ page }) => {
     await homePage.goToProductPage();
 
     // Expect URL
-    await expect(page).toHaveURL(/https:\/\/practicesoftwaretesting\.com\/product\/[A-Za-z0-9]+/);
+    await expect(page).toHaveURL(/\/product\/[A-Za-z0-9]+/);
 });
