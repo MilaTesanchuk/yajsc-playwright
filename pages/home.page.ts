@@ -3,15 +3,15 @@ import { ProductPage } from '../pages/product.page';
 
 export class HomePage {
     page: Page;
-    itemCard: Locator;
+    productName: string;
     constructor(page: Page) {
         this.page = page;
-        this.itemCard = this.page.getByText(' Combination Pliers ');
+        this.productName = 'Combination Pliers';
     }
 
     async goToProductPage(): Promise<ProductPage> {
         await this.page.goto('/');
-        await this.itemCard.click();
+        await this.page.getByText(this.productName).click();
         return new ProductPage(this.page);
     }
 }

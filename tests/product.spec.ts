@@ -9,7 +9,7 @@ test('product name is Combination Pliers', async ({ page }) => {
     const productPage = await homePage.goToProductPage();
 
     // Expect product name is Combination Pliers
-    await expect(productPage.pageTitle).toHaveText(' Combination Pliers ');
+    await expect(productPage.pageTitle).toHaveText('Combination Pliers');
 
     // Expect product price is 14.15
     await expect(productPage.productPrice).toHaveText('14.15');
