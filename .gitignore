@@ -8,6 +8,7 @@ playwright-report/
 blob-report/
 playwright/.cache/
 playwright/.auth/
+.vscode/settings.json
 
 # Optional: videos & traces if you store them separately
 *.mp4
