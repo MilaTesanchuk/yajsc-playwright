@@ -3,7 +3,7 @@ import { HomePage } from '../pages/home.page';
 
 test('user can go to product page', async ({ page }) => {
     const homePage = new HomePage(page);
-    await homePage.goToProductPage();
+    await homePage.goToProductPage('Combination Pliers');
 
     // Expect URL
     await expect(page).toHaveURL(/\/product\/[A-Za-z0-9]+/);
