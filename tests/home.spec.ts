@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { HomePage } from '../pages/home.page';
+import { CategoryPowerTools } from '../enums/categories.enum';
 
 test('user can go to product page', async ({ page }) => {
     const homePage = new HomePage(page);
@@ -69,29 +70,6 @@ for (const { name, sortOption, sortPrices } of sortingPriceCases) {
         expect(productPrices).toEqual(sorted);
     });
 };
-
-export enum CategoryHandTools {
-    hammer = 'Hammer',
-    handSaw = 'Hand Saw',
-    wrench = 'Wrench',
-    screwdriver = 'Screwdriver',
-    pliers = 'Pliers',
-    chisels = 'Chisels',
-    measures = 'Measures'
-};
-export enum CategoryPowerTools {
-    grinder = 'Grinder',
-    sander = 'Sander',
-    saw = 'Saw',
-    drill = 'Drill'
-};
-export enum CategoryOther {
-    toolBelts = 'Tool Belt',
-    storageSolutions = 'Storage Solutions',
-    workBench = 'Work Bench',
-    safetyGear = 'Safety Gear',
-    fasteners = 'Fasteners'
-}
 
 test('user can filter products by category', async ({ page }) => {
     const homePage = new HomePage(page);
