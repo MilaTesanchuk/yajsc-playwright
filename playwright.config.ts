@@ -30,19 +30,34 @@ export default defineConfig({
     testIdAttribute: 'data-test',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    trace: 'on-first-retry',
+    trace: 'on',
+    headless: false,
+    launchOptions: { slowMo: 500 }
   },
 
   /* Configure projects for major browsers */
   projects: [
+    // Setup project
+    { name: 'performLogin', testMatch: /.*\.setup\.ts/ },
+
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        // Use prepared auth state.
+        // storageState: 'playwright/.auth/userLogin.json',
+      },
+      //dependencies: ['performLogin']
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      use: {
+        ...devices['Desktop Firefox'],
+        // Use prepared auth state.
+        //  storageState: 'playwright/.auth/userLogin.json',
+      },
+      dependencies: ['performLogin']
     },
 
     {
@@ -71,10 +86,4 @@ export default defineConfig({
     // },
   ],
 
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://localhost:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });

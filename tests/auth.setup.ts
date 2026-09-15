@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test as setup, expect } from '@playwright/test';
 import { LoginPage } from '../pages/login.page';
 import path from 'path';
 import { dirname } from 'path';
@@ -8,18 +8,14 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const authFile = path.join(__dirname, '../playwright/.auth/userLogin.json');
-test.use({ storageState: authFile });
 
-test('log in', async ({ page }) => {
+setup('log in', async ({ page }) => {
     const loginPage = new LoginPage(page);
-
-    await page.goto('/auth/login');
     // Log in
+    await page.goto('/auth/login');
     await loginPage.performLogin('customer@practicesoftwaretesting.com', 'welcome01');
     //Expect URL
     await expect(page).toHaveURL('/account');
-    // Expect page to have  title
-    await expect(loginPage.pageTitle).toHaveText('My account');
-    // Expect user name is present in the menu
-    await expect(loginPage.userNameInNav).toHaveText('Jane Doe');
+
+    await page.context().storageState({ path: authFile });
 });
